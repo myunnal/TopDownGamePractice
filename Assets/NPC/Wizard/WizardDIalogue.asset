@@ -18,6 +18,22 @@ MonoBehaviour:
   - "Turiu tau u\u017Eduot\u012F"
   - "Surask mano \u017Ealt\u012F vardu Jonas"
   - "U\u017E tai atsid\u0117kosiu :)))"
-  autoProgressLines: 01010100
+  - "Gali pad\u0117ti?"
+  - "A\u010Di\u016B :3"
+  - :(
+  - "S\u0117km\u0117s ie\u0161kant!"
+  - "OOO A\u010CI\u016A"
+  autoProgressLines: 01010101010000
+  endDialogueLines: 000000000001010101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
+  choices:
+  - dialogueIndex: 4
+    choices:
+    - Yes
+    - No
+    nextDialogueIndexes: 0500000006000000
+    givesQuest: 0100
+  questInProgressIndex: 7
+  questCompletedIndex: 8
+  quest: {fileID: 11400000, guid: b3f4642fbeb4a6b429082ca94df84d77, type: 2}

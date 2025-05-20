@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class DialogueController : MonoBehaviour
 {
-    public static DialogueController Instance { get; private set; }
+    public static DialogueController Instance { get; private set; } //Singleton
     public GameObject dialoguePanel;
     public TMP_Text dialogueText, nameText;
     public Transform choiceContainer;

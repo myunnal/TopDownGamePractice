@@ -16,4 +16,4 @@ MonoBehaviour:
   title: Naujas burtas!
   description: "Dabar gali kovoti naudodamas vanden\u012F!"
   objectiveID: 1
-  IsUnlocked: 1
+  IsUnlocked: 0

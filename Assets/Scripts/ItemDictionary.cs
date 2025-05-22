@@ -20,7 +20,10 @@ public class ItemDictionary : MonoBehaviour
 
         foreach (Item item in itemPrefabs)
         {
-            itemDictionary[item.ID] = item.gameObject;
+            if (item != null)
+            {
+                itemDictionary[item.ID] = item.gameObject;
+            }
         }
     }
 

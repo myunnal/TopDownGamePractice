@@ -35,6 +35,8 @@ public class PlayerCombat : MonoBehaviour
 
     void HandleAttackInput()
     {
+         if (PauseController.IsGamePaused) return;
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
             SetAttackStrategy(new NormalAttack(normalAttackVFX, normalAttackSound));
         

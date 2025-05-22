@@ -3,12 +3,16 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    [Header("Stats")]
+   [Header("Stats")]
     public float health = 100f;
     public float moveSpeed = 2f;
     public float attackDamage = 10f;
     public float attackCooldown = 2f;
     public float detectionRange = 5f;
+
+    [Header("Effects")]
+    public ParticleSystem hitVFX;
+    public AudioClip hitSound;
 
     [Header("References")]
     public Slider healthSlider;
@@ -18,12 +22,13 @@ public class Enemy : MonoBehaviour
     private Transform _player;
     private float _attackTimer;
     private bool _isDead;
-
+    private AudioSource _audioSource;
     void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         healthSlider.maxValue = health;
         healthSlider.value = health;
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -72,6 +77,10 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        // Play hit effects
+        if (hitVFX != null) hitVFX.Play();
+        if (hitSound != null) _audioSource.PlayOneShot(hitSound);
+        
         health -= damage;
         healthSlider.value = health;
 
